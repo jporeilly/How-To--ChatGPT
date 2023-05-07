@@ -5,7 +5,7 @@ import json
 openai.api_key = "OPENAI API KEY"
 
 # define the text you want to embed
-text = "This is an example sentence to be embedded."
+text = "The brown fox jumped over the lazy dog."
 
 # use the ada-002 model to embed the text
 response = openai.Embedding.create(
