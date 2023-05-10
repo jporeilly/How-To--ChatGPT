@@ -26,7 +26,7 @@ index_name = 'financial'
 
 # create embeddings using OpenAI. Temperature = 0 to stop waffle
 embeddings = OpenAIEmbeddings(openai_api_key=os.environ['OPENAI_API_KEY'])
-pinecone = Pinecone.from_existing_index(index_name, embeddings)
+pinecone = Pinecone.from_existing_index(index_name, embeddings, namespace='FR_2016')
 openAI = OpenAI(temperature=0, openai_api_key=os.environ['OPENAI_API_KEY'])
 chain = load_qa_chain(openAI, chain_type="stuff")
 
