@@ -10,13 +10,12 @@ import os
 import pinecone
 
 # Enter your API key & region from Pinecone. 
-# Link to keys: https://platform.openai.com/account/billing/overview
-PINECONE_API_KEY = 'fd59ad27-4abe-4292-a743-7ef93e4d860e'
-PINECONE_API_ENV = 'us-west1-gcp-free'
+PINECONE_API_KEY = 'API KEY'
+PINECONE_API_ENV = 'REGION'
 
 # Enter your API key from Openai. 
 # Link to keys: https://platform.openai.com/account/billing/overview
-os.environ['OPENAI_API_KEY'] = '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'
+os.environ['OPENAI_API_KEY'] = 'API KEY'
 
 # connect to Pinecone index = financial, namespace = FR_2016
 pinecone.init(
