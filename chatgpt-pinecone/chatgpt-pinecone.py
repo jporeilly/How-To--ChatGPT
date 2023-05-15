@@ -32,7 +32,7 @@ chain = load_qa_chain(openAI, chain_type="stuff")
 
 
 def askGPT(prompt):
-    docs = pinecone.similarity_search(prompt, include_metadata=False)
+    docs = pinecone.similarity_search(prompt)
     ch = chain.run(input_documents=docs, question=prompt)
     print(ch)
 
