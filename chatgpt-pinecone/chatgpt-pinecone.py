@@ -10,21 +10,29 @@ import os
 import pinecone
 
 # Enter your API key & region from Pinecone. 
-PINECONE_API_KEY = 'API KEY'
-PINECONE_API_ENV = 'REGION'
+os.environ['PINECONE_API_KEY'] = 'fd59ad27-4abe-4292-a743-7ef93e4d860e'
+os.environ['PINECONE_API_ENV'] = 'us-west1-gcp-free'
+os.environ['PINECONE_INDEX'] = 'financial'
 
 # Enter your API key from Openai. 
 # Link to keys: https://platform.openai.com/account/billing/overview
-os.environ['OPENAI_API_KEY'] = 'API KEY'
+os.environ['OPENAI_API_KEY'] = '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'
+
 
 # connect to Pinecone index = financial, namespace = FR_2016
 pinecone.init(
-    api_key=PINECONE_API_KEY,  
-    environment=PINECONE_API_ENV
+    api_key=os.environ['PINECONE_API_KEY'],  
+    environment=os.environ['PINECONE_API_ENV']
 )
-index_name = 'financial' 
+# create an index - financial commented out for free tier
+# pinecone.create_index(os.environ['PINECONE_INDEX'],
+#                      dimension=1536,
+#                      metric='cosine',
+#                      metadata_config={
+#                          "indexed": ['source', 'source_id', 'url', 'created_at', 'author', 'document_id']})
 
 # create embeddings using OpenAI. Temperature = 0 to stop waffle
+index_name = os.environ['PINECONE_INDEX']
 embeddings = OpenAIEmbeddings(openai_api_key=os.environ['OPENAI_API_KEY'])
 pinecone = Pinecone.from_existing_index(index_name, embeddings, namespace='FR_2016')
 openAI = OpenAI(temperature=0, openai_api_key=os.environ['OPENAI_API_KEY'])
