@@ -19,7 +19,7 @@ os.environ['PINECONE_INDEX'] = 'pdi'
 os.environ['OPENAI_API_KEY'] = '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'
 
 
-# connect to Pinecone index = financial, namespace = FR_2016
+# connect to Pinecone index = pdi, namespace = cd_8
 pinecone.init(
     api_key=os.environ['PINECONE_API_KEY'],  
     environment=os.environ['PINECONE_API_ENV']
@@ -34,7 +34,7 @@ pinecone.init(
 # create embeddings using OpenAI. Temperature = 0 to stop waffle
 index_name = os.environ['PINECONE_INDEX']
 embeddings = OpenAIEmbeddings(openai_api_key=os.environ['OPENAI_API_KEY'])
-pinecone = Pinecone.from_existing_index(index_name, embeddings, namespace='FR_2016')
+pinecone = Pinecone.from_existing_index(index_name, embeddings, namespace='ce_8')
 openAI = OpenAI(temperature=0, openai_api_key=os.environ['OPENAI_API_KEY'])
 chain = load_qa_chain(openAI, chain_type="stuff")
 

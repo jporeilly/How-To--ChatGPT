@@ -156,8 +156,7 @@ if __name__ == "__main__":
         """
         Hi..
         I'm a hacked version of Google's Bard.
-        Don't believe everything as I'm to making
-        some sh*t up ..
+        Don't believe everything as I'm making some cr*p up ..
         
         Enter `alt+enter` or `esc+enter` to send a message.
         """,
