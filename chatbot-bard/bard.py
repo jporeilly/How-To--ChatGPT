@@ -154,9 +154,11 @@ class Chatbot:
 if __name__ == "__main__":
     print(
         """
-        Bard - A command-line interface to Google's Bard (https://bard.google.com/)
-        Repo: github.com/acheong08/Bard
-
+        Hi..
+        I'm a hacked version of Google's Bard.
+        Don't believe everything as I'm to making
+        some sh*t up ..
+        
         Enter `alt+enter` or `esc+enter` to send a message.
         """,
     )
@@ -186,7 +188,7 @@ if __name__ == "__main__":
 
     try:
         while True:
-            console.print("You:")
+            console.print("Ask your Question:")
             user_prompt = __get_input(prompt_sess=prompt_session, completer=completions)
             console.print()
             if user_prompt == "!exit":
@@ -196,7 +198,7 @@ if __name__ == "__main__":
                 chatbot.response_id = ""
                 chatbot.choice_id = ""
                 continue
-            print("Google Bard:")
+            print("Here's what I've found:")
             response = chatbot.ask(user_prompt)
             console.print(Markdown(response["content"]))
             print()
