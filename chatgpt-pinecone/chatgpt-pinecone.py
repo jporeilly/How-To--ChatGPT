@@ -10,13 +10,13 @@ import os
 import pinecone
 
 # Enter your API key & region from Pinecone. 
-os.environ['PINECONE_API_KEY'] = '9a93d55a-836d-48f2-8aef-d327bf14d5d1'
+os.environ['PINECONE_API_KEY'] = 'a8f51597-92c6-4f5a-bbf3-420052427b55'
 os.environ['PINECONE_API_ENV'] = 'us-west1-gcp-free'
-os.environ['PINECONE_INDEX'] = 'pdi'
+os.environ['PINECONE_INDEX'] = 'financial'
 
 # Enter your API key from Openai. 
 # Link to keys: https://platform.openai.com/account/billing/overview
-os.environ['OPENAI_API_KEY'] = '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'
+os.environ['OPENAI_API_KEY'] = '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'
 
 
 # connect to Pinecone index = financial, namespace = FR_2016
@@ -46,7 +46,7 @@ def askGPT(prompt):
 
 def main():
     while True:
-        print('OpenAI + Pinecone: PDI CE 8\n')
+        print('OpenAI + Pinecone: Financial\n')
         prompt = "prompt:" + input()
         
         askGPT(prompt)
